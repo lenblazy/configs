@@ -12,8 +12,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 - Initial project setup with basic app template.
 - Added a Changelog file to the project.
-- Configured launcher icon and splash screen.
+- Configured project launcher icons.
 - Added a project Readme file.
+
+### Changed
+
+- Updated analysis_options yaml file
 
 [unreleased]: https://github.com/<REPO-USERNAME>/<REPOSITORY>/compare/v1.0.1...HEAD
 [0.0.2]: https://github.com/REPO-USERNAME/REPOSITORY/compare/v0.0.2...v0.0.1
