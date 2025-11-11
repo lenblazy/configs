@@ -1,21 +1,100 @@
 include: package:flutter_lints/flutter.yaml
+analyzer:
+	exclude:
+		- lib/src/**.g.dart
+		- lib/generated/**
+		- [build/**]
+	language:
+		strict-casts: true
+		strict-raw-types: true
+		strict-inference: true
 
-	analyzer:
-	  strong-mode:
-	    implicit-casts: false
-	    implicit-dynamic: false
-	  errors:
-	    unused_local_variable: warning
-	    dead_code: error
+	strong-mode: 
+		implicit-casts: false
+		implicit-dynamic: false
 
-	linter:
-	  rules:
-	    - avoid_print
-	    - prefer_const_constructors
-	    - annotate_overrides
-	    - avoid_init_to_null
-	    - sort_constructors_first
-	    - prefer_final_locals
-	    - prefer_is_empty
-	    - avoid_return_types_on_setters
-	    - avoid_unused_constructor_parameters
+	errors:
+		unused_local_variable: warning
+		dead_code: error
+		invalid_use_of_visible_for_testing_member: error
+		require_trailing_commas: warning
+
+linter:
+	metrics:
+		halstead-volume: 50
+		cyclomatic-complexity: 10
+		lines-of-code: 10
+		maximum-nesting-level: 5
+
+	rules:
+		- cancel_subscriptions
+		- avoid_init_to_null
+		- avoid_return_types_on_setters
+		- avoid_unused_constructor_parameters
+		- sort_constructors_first
+		- annotate_overrides: true
+    - avoid_annotating_with_dynamic: true
+    - avoid_empty_else: true
+    - avoid_print: true
+    - avoid_single_cascade_in_expression_statements: true
+    - camel_case_types: true
+    - control_flow_in_finally: true
+    - file_names: true
+    - hash_and_equals: true
+    - library_names: true
+    - prefer_adjacent_string_concatenation: true
+    - prefer_collection_literals: true
+    - prefer_const_constructors: true
+    - prefer_const_declarations: true
+    - prefer_const_literals_to_create_immutables: true
+    - prefer_final_fields: true
+    - prefer_final_in_for_each: true
+    - prefer_final_locals: true
+    - prefer_interpolation_to_compose_strings: true
+    - prefer_is_empty: true
+    - prefer_is_not_empty: true
+    - prefer_typing_uninitialized_variables: true
+    - require_trailing_commas: true
+    - type_annotate_public_apis: true
+    - unnecessary_const: true
+    - unnecessary_new: true
+    - unnecessary_this: true
+    - use_function_type_syntax_for_parameters: true
+    - use_key_in_widget_constructors: true
+
+		- avoid_null_checks_in_equality_operators: true
+    - prefer_if_elements_to_conditional_expressions: true
+      
+		- prefer_const_constructors_in_immutables: true
+    - avoid_redundant_argument_values: true
+    - avoid_unnecessary_containers: true
+    - use_decorated_box: true
+    - use_build_context_synchronously: true
+
+		- avoid-slow-collection-methods
+    - avoid-single-child-column-or-row
+    - prefer-bytes-builder
+    - prefer-declaring-const-constructor
+    - avoid-map-keys-contains
+    - avoid-border-all
+    - avoid-incorrect-image-opacity
+    - avoid-returning-widgets
+    - avoid-unnecessary-setstate
+    - pass-existing-future-to-future-builder
+    - pass-existing-stream-to-stream-builder
+    - prefer-const-border-radius
+    - prefer-dedicated-media-query-methods
+    - prefer-match-file-name: true
+    - avoid-undisposed-instances:
+        ignored-instances:
+          - SomeClass
+        ignored-invocations:
+          - WithAutoDispose
+    - arguments-ordering:
+        alphabetize: true
+        first:
+          - some
+          - name
+        last:
+          - child
+          - children
