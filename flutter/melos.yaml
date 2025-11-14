@@ -1,0 +1,24 @@
+name: base_flutter
+
+packages:
+  - ./**
+  - core/**
+  - features/**
+
+scripts:
+  analyze:
+    exec: flutter analyze
+
+  test:
+    run: melos exec -c 1 --dir-exists="test" --fail-fast -- flutter test --no-pub --coverage
+    description: Run all Flutter tests in this project.
+
+  test_and_coverage:
+    description: Merge all packages coverage tracefiles ignoring data related to generated files.
+    run: |
+      melos run test
+      melos exec -c 1 --file-exists=coverage/lcov.info -- coverde filter --input ./coverage/lcov.info --paths-parent MELOS_PACKAGE_PATH --output MELOS_ROOT_PATH/coverage/filtered.lcov.info --filters \.g\.dart
+      coverde value -i coverage/filtered.lcov.info > MELOS_ROOT_PATH/coverage/result.txt
+
+  fix:
+    exec: dart fix --apply
