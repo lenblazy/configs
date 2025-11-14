@@ -1,5 +1,5 @@
-import 'package:base_flutter/router/app_router.dart';
-import 'package:base_flutter/router/default_app_navigator.dart';
+import 'package:package_name/router/app_router.dart';
+import 'package:package_name/router/default_app_navigator.dart';
 import 'package:core_flutter/core.dart';
 import 'package:flutter/material.dart';
 import 'package:ui_flutter/ui.dart';
